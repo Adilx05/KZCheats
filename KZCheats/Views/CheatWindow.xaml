@@ -1,0 +1,32 @@
+﻿<mah:MetroWindow
+    x:Class="KZCheats.Views.CheatWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    Title="KZ Cheats - Cheat Activation" Height="450" Width="800">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="GameInfoText" FontSize="16" FontWeight="Bold" Grid.Row="0" Margin="0 0 0 10"/>
+
+        <DataGrid x:Name="CheatsDataGrid" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="CheatsDataGrid_MouseDoubleClick" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="*" />
+                <DataGridCheckBoxColumn Header="Freeze" Binding="{Binding Freeze}" Width="Auto" />
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0 10 0 0" HorizontalAlignment="Center">
+            <Button Content="Activate All" Width="120" Margin="0 0 10 0" Click="ActivateAll_Click"/>
+            <Button Content="Deactivate All" Width="120" Click="DeactivateAll_Click"/>
+        </StackPanel>
+
+    </Grid>
+
+</mah:MetroWindow>

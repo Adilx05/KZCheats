@@ -7,7 +7,25 @@
         xmlns:local="clr-namespace:KZCheats"
         mc:Ignorable="d"
         Title="Kz Cheats" Height="450" Width="800">
-    <Grid>
 
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0 0 0 10">
+            <Button Content="Select New KZC File" Width="150" Margin="0 0 10 0" Click="SelectNewFile_Click"/>
+            <Button Content="Continue" Width="100" Click="Continue_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="FilesDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single" MouseDoubleClick="FilesDataGrid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Game Name" Binding="{Binding GameName}" Width="*"/>
+                <DataGridTextColumn Header="Game Version" Binding="{Binding GameVersion}" Width="*"/>
+                <DataGridTextColumn Header="File Path" Binding="{Binding FilePath}" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </mah:MetroWindow>
