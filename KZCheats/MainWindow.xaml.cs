@@ -88,6 +88,11 @@ public partial class MainWindow : MetroWindow
         }
     }
 
+    /// <summary>
+    /// Handles the double-click event on the DataGrid to open the CheatWindow.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void FilesDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
         if (FilesDataGrid.SelectedItem is KzcFileEntry selectedEntry)
