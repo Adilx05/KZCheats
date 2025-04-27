@@ -36,7 +36,7 @@ jobs:
 
     # Test kısmı geçici olarak kaldırıldı
     - name: Execute unit tests
-      run: echo "No tests to run"
+      run: dotnet test $env:Test_Project_Path
 
     - name: Restore the application
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
