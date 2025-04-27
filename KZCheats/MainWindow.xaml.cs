@@ -21,6 +21,7 @@ public partial class MainWindow : MetroWindow
 {
     private ObservableCollection<KzcFileEntry> _fileEntries = new();
 
+
     public MainWindow()
     {
         InitializeComponent();
@@ -55,7 +56,7 @@ public partial class MainWindow : MetroWindow
 
 
 
-    private void SelectNewFile_Click(object sender, RoutedEventArgs e)
+    public void SelectNewFile_Click(object sender, RoutedEventArgs e)
     {
         var openFileDialog = new OpenFileDialog
         {
@@ -104,7 +105,7 @@ public partial class MainWindow : MetroWindow
     }
 
 
-    private void Continue_Click(object sender, RoutedEventArgs e)
+    public void Continue_Click(object sender, RoutedEventArgs e)
     {
         var selectedEntry = FilesDataGrid.SelectedItem as KzcFileEntry;
         if (selectedEntry == null)
